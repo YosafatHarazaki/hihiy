@@ -70,7 +70,7 @@ body {
     top: 70px;
     /* Geser ke kanan agar tidak tertutup foto */
     right: 50px; /* Tetap di sini atau geser ke kanan jika perlu, misal: right: 20px; */
-    left: 550px; /* <-- Atur posisi kiri agar tidak menutupi foto. Sesuaikan nilai ini */
+    left: 600px; /* <-- Atur posisi kiri agar tidak menutupi foto. Sesuaikan nilai ini */
     width: 450px; /* Bisa diperbesar jika pesan terlalu panjang */
     height: 450px; /* Bisa diperbesar jika pesan terlalu panjang */
     background-color: #fff;
@@ -398,4 +398,5 @@ body {
         right: 15px;
         z-index: 100;
     }
+
 }
