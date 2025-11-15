@@ -1,0 +1,401 @@
+/* Impor Google Fonts di CSS (alternatif selain di HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gochi+Hand&family=Permanent+Marker&display=swap');
+
+/*
+  Font yang kita gunakan:
+  - 'Anton': Untuk 'HAPPY BIRTHDAY' & 'HAPPY 22!!!'
+  - 'Permanent Marker': Untuk 'CANTIK'
+  - 'Gochi Hand': Untuk isi pesan
+*/
+
+body {
+    /* Latar belakang kertas kusut/krem */
+    background-color: #fdaacf;
+    font-family: 'Gochi Hand', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Kontainer utama yang menampung semuanya */
+.scrapbook-container {
+    position: relative;
+    width: 950px; /* Lebar keseluruhan kontainer */
+    height: 650px; /* Tinggi keseluruhan kontainer */
+    
+    /* --- UBAH PROPERTI BACKGROUND DI SINI --- */
+    background-image: url('paper-texture.jpg'); /* <-- Ganti dengan NAMA FILE GAMBAR Anda */
+    background-size: cover; /* Akan menutupi seluruh area kontainer */
+    background-position: center center; /* Memposisikan gambar di tengah */
+    /* -------------------------------------- */
+
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Penting agar stiker dan bayangan tidak keluar batas */
+}
+
+/* ===== GAYA FOTO POLAROID ===== */
+.polaroid {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 2rem; /* 2rem berarti 2x ukuran font normal (sekitar 32px) */
+    color: #333; /* Warna hitam/abu-abu tua */
+    margin: 15px 0 0 0; /* Memberi jarak 15px dari atas (dari foto) */
+    position: absolute;
+    top: 50px;
+    left: 40px; /* Biarkan di 40px atau sedikit geser ke kanan jika perlu */
+    background: #fff;
+    padding: 15px 15px 45px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(-8deg);
+    z-index: 5;
+    /* Lebar foto polaroid. Sesuaikan ini agar tidak menutupi pesan */
+    width: 330px; /* Ubah ini jika foto asli Anda lebih besar */
+    box-sizing: border-box; /* Agar padding tidak menambah lebar */
+}
+
+.polaroid img {
+    width: 100%; /* Agar gambar mengisi penuh polaroid */
+    height: auto;
+    display: block;
+    border: 1px solid #eee;
+}
+
+/* ===== GAYA KERTAS CATATAN ===== */
+.note-paper {
+    position: absolute;
+    top: 70px;
+    /* Geser ke kanan agar tidak tertutup foto */
+    right: 50px; /* Tetap di sini atau geser ke kanan jika perlu, misal: right: 20px; */
+    left: 550px; /* <-- Atur posisi kiri agar tidak menutupi foto. Sesuaikan nilai ini */
+    width: 450px; /* Bisa diperbesar jika pesan terlalu panjang */
+    height: 450px; /* Bisa diperbesar jika pesan terlalu panjang */
+    background-color: #fff;
+    padding: 25px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(4deg);
+    background-image: repeating-linear-gradient(
+        #fff 0px, 
+        #fff 23px, 
+        #9cdcfe 24px
+    );
+    line-height: 24px;
+    box-sizing: border-box; /* Agar padding tidak menambah lebar/tinggi */
+}
+
+.note-paper p {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1.6;
+    /* Tambahkan margin-right agar teks tidak terlalu dekat dengan tepi kanan */
+    padding-right: 15px; 
+}
+
+/* Perbaiki juga ukuran container utama jika perlu, agar semua elemen muat */
+.scrapbook-container {
+    position: relative;
+    width: 950px; /* Tambahkan lebar jika ada elemen yang terpotong */
+    height: 650px; /* Tambahkan tinggi jika ada elemen yang terpotong */
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+}
+
+/* ===== GAYA KERTAS CATATAN ===== */
+.note-paper {
+    position: absolute; /* Diposisikan relatif terhadap .scrapbook-container */
+    top: 70px;
+    right: 50px;
+    width: 450px;
+    height: 450px;
+    background-color: #fff;
+    padding: 25px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Ini untuk memiringkan elemen */
+    transform: rotate(4deg);
+
+    /* Trik untuk membuat garis-garis buku catatan */
+    background-image: repeating-linear-gradient(
+        #fff 0px, 
+        #fff 23px, 
+        #6acafd 24px
+    );
+    line-height: 24px; /* Samakan dengan tinggi garis di atas */
+}
+
+.note-paper h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1.2;
+    color: #000;
+}
+
+.note-paper .highlight {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.8rem;
+    color: #e91e63; /* Warna pink */
+    margin-left: 10px;
+}
+
+.note-paper p {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1.6; /* Atur spasi antar baris */
+}
+
+
+/* ===== GAYA STIKER ===== */
+.sticker {
+    position: absolute;
+    z-index: 10; /* Pastikan stiker ada di lapisan paling atas */
+    /* Hapus jika ada border: 1px solid #ddd; atau sejenisnya yang tidak diinginkan */
+    border: none; /* Tambahkan ini untuk memastikan tidak ada border */
+}
+
+/* Sesuaikan ukuran dan posisi stiker agar tidak tumpang tindih dengan teks placeholder */
+#sticker-bow {
+    top: 20px;
+    left: 10px;
+    width: 150px; /* Mungkin perlu sedikit lebih besar atau lebih kecil */
+    transform: rotate(-15deg);
+}
+
+#sticker-gem-blue {
+    top: 40px;
+    right: 525px; /* Sesuaikan posisi agar tidak terlalu ke kiri */
+    width: 80px;
+    transform: rotate(15deg);
+    z-index: 1; /* Biarkan di belakang kertas catatan */
+}
+
+#sticker-flower {
+    top: 40px;
+    right: 80px;
+    width: 120px;
+}
+
+#sticker-star {
+    bottom: 75px;
+    left: 320px;
+    width: 120px;
+    transform: rotate(15deg);
+    z-index: 6; /* Di atas polaroid */
+}
+
+#sticker-gem-pink {
+    bottom: 100px;
+    right: 225px;
+    width: 110px;
+    transform: rotate(-35deg);
+}
+
+#sticker-dino {
+    bottom: 25px;
+    right: 10px;
+    width: 200px;
+    transform: rotate(15deg);
+}
+
+#sticker-cat1 {
+    bottom: 225px;
+    right: 30px;
+    width: 150px;
+    transform: rotate(15deg);
+}
+
+#sticker-biyu {
+    bottom: 50px;
+    left: 25px;
+    width: 120px;
+    transform: rotate(-15deg);
+    z-index: 6; /* Di atas polaroid */
+}
+
+#sticker-cat2 {
+    bottom: -25px;
+    right: 350px;
+    width: 130px;
+}
+
+/* ===== GALERI FOTO BERJALAN ===== */
+
+/* 1. Wrapper untuk galeri */
+.scrolling-gallery {
+    position: absolute;
+    bottom: 20px; /* Jarak dari bawah kontainer */
+    left: 0;
+    width: 100%;
+    height: 120px; /* Tinggi area galeri */
+    overflow: hidden; /* Sembunyikan foto yang di luar area */
+    z-index: 5;
+    
+    /* Efek fade di pinggir agar terlihat lebih mulus (Opsional tapi disarankan) */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* 2. Track yang menampung dan menganimasikan foto */
+.scrolling-track {
+    display: flex;
+    width: max-content; /* Lebar otomatis berdasarkan jumlah foto */
+    
+    /* Panggil animasi */
+    animation: scrollLeft 20s linear infinite;
+}
+
+/* 3. Style untuk setiap foto polaroid kecil */
+.mini-polaroid {
+    width: 80px; /* Lebar polaroid kecil */
+    background: #fff;
+    padding: 5px 5px 15px 5px; /* Padding khas polaroid */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 10px 15px; /* Jarak atas/bawah dan kiri/kanan */
+    flex-shrink: 0; /* PENTING: agar foto tidak 'menciut' */
+    
+    /* Sedikit efek miring agar lebih estetik */
+    transform: rotate(-4deg);
+}
+
+/* Buat foto sebelahnya miring ke arah lain */
+.mini-polaroid:nth-child(even) {
+    transform: rotate(5deg);
+}
+
+.mini-polaroid img {
+    width: 100%;
+    display: block;
+}
+
+/* 4. Definisi Animasi (Keyframes) */
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Bergerak ke kiri sejauh 50% dari total lebar track */
+        /* (Karena kita menduplikasi kontennya) */
+        transform: translateX(-50%);
+    }
+}
+
+/* ================================== */
+/* ===== STYLE UNTUK HP (RESPONSIVE) ===== */
+/* ================================== */
+@media (max-width: 600px) {
+
+    /* Ubah kontainer utama agar fleksibel */
+    .scrapbook-container {
+        width: 100%; /* Gunakan lebar penuh layar */
+        height: auto; /* Biarkan tinggi menyesuaikan konten */
+        padding: 10px;
+        border: none; /* Hapus border agar lebih bersih */
+        box-shadow: none; /* Hapus bayangan */
+        overflow: visible; /* Biarkan konten terlihat */
+    }
+    
+    /* * Ini adalah bagian PENTING:
+     * Kita mereset semua elemen utama agar tidak 'absolute'
+     * dan membuatnya menumpuk secara vertikal.
+    */
+    .polaroid,
+    .note-paper,
+    .bottom-section-background,
+    .happy-22-text,
+    .scrolling-gallery {
+        position: relative; /* HAPUS 'absolute' */
+        width: 95%; /* Lebar hampir penuh */
+        height: auto; /* Tinggi otomatis */
+        margin: 15px auto; /* Membuatnya di tengah dan memberi jarak */
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: rotate(0deg); /* Luruskan semua elemen */
+    }
+
+    /* Sesuaikan foto utama */
+    .polaroid {
+        width: 90%; /* Sedikit lebih kecil dari kertas */
+        padding: 10px 10px 20px 10px;
+    }
+
+    /* Sesuaikan kertas catatan */
+    .note-paper {
+        padding: 20px;
+        background-image: repeating-linear-gradient(#fff 0px, #fff 27px, #9cdcfe 28px);
+        line-height: 28px; /* Sesuaikan jarak baris */
+    }
+
+    /* Kecilkan font di kertas catatan */
+    .note-paper h2 {
+        font-size: 2rem;
+    }
+    .note-paper .highlight {
+        font-size: 1.8rem;
+    }
+    .note-paper p {
+        font-size: 1.1rem; /* Perbesar sedikit agar mudah dibaca di HP */
+        line-height: 1.5;
+    }
+    
+    /* Sesuaikan area bawah */
+    .bottom-section-background {
+        height: auto;
+        padding-bottom: 20px;
+        margin-top: 30px;
+    }
+    
+    /* Teks "HAPPY 22!!!" */
+    .happy-22-text {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    
+    /* Galeri berjalan */
+    .scrolling-gallery {
+        height: 100px; /* Buat sedikit lebih kecil */
+        margin-top: 20px;
+    }
+    .mini-polaroid {
+        width: 70px; /* Kecilkan foto di galeri */
+        padding: 4px 4px 10px 4px;
+        margin: 5px 10px;
+    }
+
+    /* * Cara termudah untuk stiker adalah menyembunyikannya di HP,
+     * karena memposisikannya ulang sangat rumit.
+    */
+    .sticker {
+        display: none;
+    }
+    
+    /* (Opsional) Jika Anda ingin tetap menampilkan pita, gunakan ini */
+    /*
+    #sticker-bow {
+        display: block;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 100px;
+    }
+    */
+
+    /* Pindahkan tombol musik agar menempel di layar HP */
+    #play-music-button {
+        position: fixed; /* Akan selalu menempel di layar */
+        bottom: 15px;
+        right: 15px;
+        z-index: 100;
+    }
+}

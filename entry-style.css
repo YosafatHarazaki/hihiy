@@ -1,0 +1,113 @@
+/* Impor Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive; /* Menggunakan font yang kita impor */
+    overflow: hidden; /* Mencegah scroll */
+    
+    /* Menggunakan gambar latar belakang pink */
+    background-image: url('paper-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Penting untuk memposisikan boneka */
+    position: relative; 
+}
+
+/* Style untuk tulisan "HAPPY" */
+.main-text {
+    /* Trik untuk memusatkan di tengah layar */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 9rem; /* Ukuran font super besar */
+    color: #000;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk link (<a>) yang membungkus boneka */
+/* Style untuk link (<a>) yang membungkus boneka DAN teks */
+#bear-button {
+    position: absolute;
+    bottom: 30px; /* Jarak 30px dari bawah */
+    right: 30px;  /* Jarak 30px dari kanan */
+    cursor: pointer;
+    
+    /* Ini akan menumpuk teks di atas gambar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Hapus garis bawah default link */
+    text-decoration: none;
+    
+    /* Atur transisi untuk efek hover */
+    transition: transform 0.3s ease;
+}
+
+/* Style untuk gambar boneka di dalam link */
+#bear-button img {
+    width: 150px; /* Atur ukuran boneka */
+    height: auto;
+    
+    /* Efek hover agar lebih interaktif */
+    transition: transform 0.3s ease;
+}
+
+/* Efek saat mouse diarahkan ke boneka */
+/* Efek saat mouse diarahkan ke boneka */
+#bear-button:hover {
+    transform: scale(1.1); /* Membesarkan seluruh tombol (teks dan gambar) */
+}
+
+/* Style untuk teks "TEKAN" yang baru */
+.button-text {
+    font-family: 'Luckiest Guy', cursive; /* Samakan font */
+    font-size: 1rem; /* Ukuran teks */
+    color: #000; /* Warna hitam */
+    margin-bottom: 5px; /* Jarak antara teks dan boneka */
+    /* Hapus bayangan jika terlalu ramai */
+    /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); */
+}
+
+/* ================================== */
+/* ===== STYLE UNTUK HP (RESPONSIVE) ===== */
+/* ================================== */
+
+/* Kode ini hanya aktif jika lebar layar 600px atau kurang */
+@media (max-width: 600px) {
+
+    /* Kecilkan teks "HAPPY" */
+    .main-text {
+        font-size: 5rem; /* Lebih kecil dari 9rem */
+    }
+
+    /* Pindahkan tombol boneka agar tidak di sudut */
+    #bear-button {
+        bottom: 40px;
+        right: 50%; /* Posisikan di tengah horizontal */
+        transform: translateX(50%); /* Trik centering */
+    }
+    
+    /* Efek hover dinonaktifkan di HP, jadi kita atur defaultnya */
+    #bear-button:hover {
+        transform: scale(1); /* Hapus efek zoom */
+    }
+
+    /* Kecilkan teks "TEKAN" */
+    .button-text {
+        font-size: 1.5rem;
+    }
+
+    /* Kecilkan gambar boneka */
+    #bear-button img {
+        width: 120px; /* Lebih kecil dari 150px */
+    }
+}
